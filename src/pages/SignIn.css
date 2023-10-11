@@ -1,0 +1,67 @@
+.signIn {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url("https://miro.medium.com/v2/resize:fit:1400/1*5lyavS59mazOFnb55Z6znQ.png")
+    center no-repeat;
+  background-size: cover;
+  object-fit: contain;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signIn__container {
+  position: absolute;
+  max-width: 700px;
+  padding: 70px;
+  margin: 0 auto;
+  color: #fff;
+  background: black;
+}
+
+.signIn__container > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signIn__container > form > h1 {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.signIn__container > form > input {
+  height: 40px;
+  outline-width: 0;
+  margin-bottom: 14px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 15px;
+}
+
+.signIn__container > form > button {
+  padding: 16px 20px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.signIn__container > form > button:disabled {
+  background-color: #830e14;
+}
+
+.signIn__container > form > h4 {
+  margin-top: 20px;
+}
+
+.signIn__overlay {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}

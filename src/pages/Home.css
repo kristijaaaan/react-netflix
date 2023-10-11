@@ -1,0 +1,72 @@
+.main {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url("https://miro.medium.com/v2/resize:fit:1400/1*5lyavS59mazOFnb55Z6znQ.png")
+    center no-repeat;
+  background-size: cover;
+  object-fit: contain;
+}
+
+.main__body {
+  color: #fff;
+  padding: 20px;
+
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 70%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.main__body > h1 {
+  font-size: 3.125rem;
+  margin-bottom: 20px;
+}
+
+.main__body > h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.main__body > h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.main__input {
+  margin: 20px;
+}
+
+.main__input > form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__input > form > input {
+  padding: 22.5px;
+  outline-width: 0;
+  height: 25px;
+  width: 30%;
+  font-size: 20px;
+  max-width: 600px;
+  border: none;
+}
+
+.main__getStarted {
+  padding: 15px 20px;
+  border: none;
+  color: #fff;
+  background-color: #e50914;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.main__gradient {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}

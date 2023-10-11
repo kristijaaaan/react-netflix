@@ -1,0 +1,67 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: 550px;
+}
+
+.banner > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner__container {
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+  top: 20%;
+  padding: 30px;
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.banner__container > h1 {
+  font-size: 40px;
+}
+
+.banner__button {
+  background-color: aliceblue;
+  border: 1px solid aliceblue;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.btn__transparent {
+  background: transparent;
+  color: #fff;
+  margin-left: 15px;
+}
+
+.banner__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.banner__info > :nth-child(1) {
+  font-size: 15px;
+  color: rgb(174, 174, 174);
+}
+
+.banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7) 0,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
