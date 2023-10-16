@@ -2,10 +2,10 @@ import { useQuery } from "react-query";
 import { getCurrentUser } from "../services/apiAuth";
 
 export function useUser() {
-  const { data: user, isLoading } = useQuery({
+  const { data: user, isLoading: isLoadingUser } = useQuery({
     queryKey: ["user"],
     queryFn: getCurrentUser,
   });
 
-  return { user, isLoading, isAuth: user?.role === "authenticated" };
+  return { user, isLoadingUser, isAuth: user?.role === "authenticated" };
 }

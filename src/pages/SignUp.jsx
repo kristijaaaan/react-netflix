@@ -1,12 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "./SignUp.css";
 import { useSignUp } from "./useSignUp";
+import { useUser } from "./useUser";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signup, isLoading } = useSignUp();
+  const { signup, isLoadingSignUp } = useSignUp();
+  const { isAuth, isLoadingUser } = useUser();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuth && !isLoadingUser) navigate("/app");
+  }, [isAuth, navigate, isLoadingUser]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -15,9 +23,9 @@ export default function SignUp() {
 
     signup(
       { email, password },
+
       {
         onSettled: () => {
-          setEmail("");
           setPassword("");
         },
       }
@@ -34,15 +42,17 @@ export default function SignUp() {
             type="email"
             placeholder="Email"
             value={email}
+            disabled={isLoadingSignUp || isLoadingUser}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
             placeholder="Password"
+            disabled={isLoadingSignUp || isLoadingUser}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button>Sign Up</button>
+          <button disabled={isLoadingSignUp || isLoadingUser}>Sign Up</button>
         </form>
       </div>
       <div className="signUp__overlay" />

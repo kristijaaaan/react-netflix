@@ -1,14 +1,16 @@
 import { useMutation } from "react-query";
-import { useNavigate } from "react-router-dom";
+import { useQueryClient } from "react-query";
 import { signup as signupApi } from "../services/apiAuth";
 
 export function useSignUp() {
-  const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
-  const { mutate: signup, isLoading } = useMutation({
+  const { mutate: signup, isLoading: isLoadingSignUp } = useMutation({
     mutationFn: signupApi,
-    onSuccess: () => navigate("/app"),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["user"] });
+    },
   });
 
-  return { signup, isLoading };
+  return { signup, isLoadingSignUp };
 }
