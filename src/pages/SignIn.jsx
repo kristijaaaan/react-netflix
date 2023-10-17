@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useSignIn } from "./useSignIn";
 import "./SignIn.css";
 
 export default function SignIn() {
-  const [email, setEmail] = useState("kikihorvatic@gmail.com");
-  const [password, setPassword] = useState("kiki321123");
+  const [email, setEmail] = useState("test@test.com");
+  const [password, setPassword] = useState("test123");
   const { mutate, isLoading } = useSignIn();
 
   function handleSubmit(e) {

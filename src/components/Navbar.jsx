@@ -12,7 +12,8 @@ export default function Navbar() {
       <Link to="/">NETFLIX</Link>
       {isAuth ? (
         <div>
-          <button>My profile</button>
+          <Link to="/profile">My profile</Link>
+          {/* <button>My profile</button> */}
           <button onClick={logout}>Logout</button>
         </div>
       ) : (

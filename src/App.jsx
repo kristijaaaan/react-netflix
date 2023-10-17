@@ -1,8 +1,10 @@
-import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import MainApp from "./pages/MainApp";
+import Profile from "./pages/Profile";
+
+import { Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 
@@ -15,6 +17,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="sign-up" element={<SignUp />} />
+        <Route path="profile" element={<Profile />} />
         <Route path="app" element={<MainApp />} />
       </Routes>
       <ReactQueryDevtools initialIsOpen={false} />

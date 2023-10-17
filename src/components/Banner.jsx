@@ -4,20 +4,13 @@ import "./Banner.css";
 
 export default function Banner() {
   const [movies, setMovies] = useState([]);
-  const movie = movies[Math.floor(Math.random() * movies.length - 1)];
+  // const movie = movies[Math.floor(Math.random() * movies.length - 1)];
+  const movie = movies[0];
 
   useEffect(() => {
-    // const abortCont = new AbortController();
-
-    // fetch(requests.fetchTopRated, { signal: abortCont.signal })
     fetch(requests.fetchTrending)
       .then((res) => res.json())
       .then((data) => setMovies(data.results));
-    // .catch((error) => {
-    //   if (error.name === "AbortError") console.log("fetch aborted");
-    // });
-
-    // return () => abortCont.abort();
   }, [requests]);
 
   function truncateString(string, num) {
