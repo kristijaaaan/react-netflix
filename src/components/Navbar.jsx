@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/">NETFLIX</Link>
+      {isAuth ? <Link to="/app">NETFLIX</Link> : <Link to="/">NETFLIX</Link>}
       {isAuth ? (
         <div>
           <Link to="/profile">My profile</Link>

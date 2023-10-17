@@ -53,6 +53,65 @@
   font-size: 20px;
 }
 
+.plan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.plan > div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.plan > div > h1 {
+  color: black;
+}
+
+.plan > div > h3 {
+  background-color: black;
+  padding: 5px;
+}
+
+.plan > div > h3 > span {
+  color: greenyellow;
+}
+
+.plan > img {
+  height: 40%;
+}
+
+input[type="file"] {
+  color: black;
+}
+
+input[type="file"]::file-selector-button {
+  border: none;
+  padding: 0.5em 0.8em;
+  border-radius: 0.2em;
+  background-color: rgb(214, 0, 0);
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.plan > div > input {
+  margin-left: 5rem;
+}
+
+.plan > div > form > button {
+  border: none;
+  padding: 0.5em 0.8em;
+  border-radius: 0.2em;
+  background-color: rgb(214, 0, 0);
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
 .info > .full__name,
 .info > .password,
 .info > .email {
