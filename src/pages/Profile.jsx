@@ -37,14 +37,15 @@ export default function Profile() {
     <main className="profile">
       <Navbar />
       <div className="profile__body">
-        <h2>My Profile</h2>
-        <div>
+        <h2>MY PROFILE</h2>
+        <div className="profile__body-container">
           <div className="info">
+            <h3>Update your account</h3>
             <div className="full__name">
               <label>Full Name:</label>
               <input
                 type="text"
-                defaultValue={user?.user_metadata.fullName}
+                defaultValue={user?.user_metadata.fullName || user?.email}
                 onBlur={handleFullName}
               />
             </div>
@@ -64,10 +65,10 @@ export default function Profile() {
                   ? user.user_metadata.avatar
                   : "default-user.jpg"
               }
-              alt=""
+              alt="Users avatar"
             />
             <div>
-              <h1>{user?.user_metadata.fullName}</h1>
+              <h1>{user?.user_metadata.fullName || user?.email}</h1>
               <h3>
                 <span>STANDARD</span> user
               </h3>
