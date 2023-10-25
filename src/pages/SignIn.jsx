@@ -2,14 +2,15 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { useSignIn } from "./useSignIn";
 import "./SignIn.css";
+import { useForm } from "react-hook-form";
 
 export default function SignIn() {
-  const [email, setEmail] = useState("test@test.com");
-  const [password, setPassword] = useState("test123");
   const { mutate, isLoading } = useSignIn();
+  const { register, handleSubmit, formState, reset } = useForm();
+  const { errors } = formState;
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function onSubmit(data) {
+    const { email, password } = data;
 
     if (!email && !password) return;
 
@@ -17,8 +18,7 @@ export default function SignIn() {
       { email, password },
       {
         onSettled: () => {
-          setEmail("");
-          setPassword("");
+          reset();
         },
       }
     );
@@ -28,22 +28,30 @@ export default function SignIn() {
     <div className="signIn">
       <Navbar />
       <div className="signIn__container">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <h1>Sign in</h1>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            disabled={isLoading}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            disabled={isLoading}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div>
+            <input
+              type="email"
+              placeholder="Email"
+              disabled={isLoading}
+              {...register("email", {
+                required: "Please enter your email address",
+              })}
+            />
+            {errors.email && <span>{errors?.email?.message}</span>}
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Password"
+              disabled={isLoading}
+              {...register("password", {
+                required: "Please enter your password",
+              })}
+            />
+            {errors.password && <span>{errors?.password?.message}</span>}
+          </div>
           <button disabled={isLoading}>Sign in</button>
         </form>
       </div>
