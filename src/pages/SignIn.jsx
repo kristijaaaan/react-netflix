@@ -34,6 +34,7 @@ export default function SignIn() {
             <input
               type="email"
               placeholder="Email"
+              defaultValue="test@test.com"
               disabled={isLoading}
               {...register("email", {
                 required: "Please enter your email address",
@@ -46,6 +47,7 @@ export default function SignIn() {
               type="password"
               placeholder="Password"
               disabled={isLoading}
+              defaultValue="test123"
               {...register("password", {
                 required: "Please enter your password",
               })}

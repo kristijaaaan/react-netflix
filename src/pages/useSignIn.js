@@ -7,12 +7,11 @@ export function useSignIn() {
   const queryClient = useQueryClient();
 
   const { mutate, isLoading } = useMutation({
-    mutationFn: ({ email, password }) => login({ email, password }),
+    mutationFn: login,
     onSuccess: (user) => {
       queryClient.setQueryData(["user"], user.user);
       navigate("/app", { replace: true });
     },
-    onError: (error) => console.log(error),
   });
 
   return { mutate, isLoading };

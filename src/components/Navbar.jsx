@@ -13,7 +13,6 @@ export default function Navbar() {
       {isAuth ? (
         <div>
           <Link to="/profile">My profile</Link>
-          {/* <button>My profile</button> */}
           <button onClick={logout}>Logout</button>
         </div>
       ) : (

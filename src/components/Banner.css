@@ -65,3 +65,26 @@
     rgba(0, 0, 0, 0) 100%
   );
 }
+
+@media screen and (max-width: 500px) {
+  .banner {
+    height: 450px;
+  }
+
+  .banner__container {
+    gap: 30px;
+  }
+
+  .banner__container > h1 {
+    font-size: 35px;
+  }
+
+  .banner__button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .banner__info > :nth-child(2) {
+    font-size: 14px;
+  }
+}

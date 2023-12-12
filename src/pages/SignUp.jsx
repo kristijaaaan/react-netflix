@@ -24,7 +24,6 @@ export default function SignUp() {
 
     signup(
       { email, password },
-
       {
         onSettled: () => {
           reset();

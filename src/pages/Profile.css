@@ -135,6 +135,28 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
+@media screen and (max-width: 450px) {
+  .profile__body > h2 {
+    margin-bottom: 45px;
+  }
+
+  .profile__body > .profile__body-container {
+    gap: 1.5rem;
+  }
+
+  .plan > div > h3 {
+    width: 100% !important;
+  }
+
+  .plan > div > form > button {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .info > div > label {
+    font-size: 16px !important;
+  }
+}
+
 @media screen and (max-width: 830px) {
   .profile {
     height: 120vh;
@@ -151,7 +173,7 @@
   }
 
   .profile__body > .profile__body-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .profile__body > .profile__body-container > div {

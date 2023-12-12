@@ -4,7 +4,6 @@ import "./Banner.css";
 
 export default function Banner() {
   const [movies, setMovies] = useState([]);
-  // const movie = movies[Math.floor(Math.random() * movies.length - 1)];
   const movie = movies[0];
 
   useEffect(() => {
